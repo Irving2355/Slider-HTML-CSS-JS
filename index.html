@@ -7,11 +7,11 @@
 </head>
 <body>
     <div class="container">
-        <input type="radio" class="slide1" name="group" checked>
-        <input type="radio" class="slide2" name="group">
-        <input type="radio" class="slide3" name="group">
-        <input type="radio" class="slide4" name="group">
-        <input type="radio" class="slide5" name="group">
+        <input type="radio" id="slide1" name="group" checked>
+        <input type="radio" id="slide2" name="group">
+        <input type="radio" id="slide3" name="group">
+        <input type="radio" id="slide4" name="group">
+        <input type="radio" id="slide5" name="group">
         
         <!--inputs radio bonitos-->
         <div class="dots">
@@ -64,11 +64,28 @@
                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, consequatur.</p>
                </div>
             </div>
-            
-            
-            
         </div>
-        
     </div>
+    
+    <script>
+        setInterval(function (){
+            if(document.getElementById('slide1').checked){
+                document.getElementById('slide2').checked=true;
+            }else if(document.getElementById('slide2').checked){
+                document.getElementById('slide3').checked=true;
+            }else if(document.getElementById('slide3').checked){
+                document.getElementById('slide4').checked=true;
+            }else if(document.getElementById('slide4').checked){
+                document.getElementById('slide5').checked=true;
+            }else{
+                document.getElementById('slide1').checked=true;
+            }
+        
+        },2000);
+    </script>
 </body>
 </html>
+
+
+
+

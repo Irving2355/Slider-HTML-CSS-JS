@@ -15,7 +15,7 @@
 }
 
 .container input{
-    /*appearance:none;*/
+    appearance:none;
 }
 
 .container .dots{
@@ -43,6 +43,69 @@
 .container input:nth-child(5):checked~.dots label:nth-child(5){
     opacity: 1;
 }
+
+.container .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .slider .slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--img);
+    background-size: cover;
+    clip-path: circle(0% at 0% 50%);
+    transition: 1.5s;
+    transition-delay: 0s;
+    background-position: left;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.container .slider .slide:nth-child(even){
+    clip-path: circle(0% at 100% 50%);
+    background-position: right;
+}
+
+.container input:nth-child(1):checked~.slider .slide:nth-child(1),
+.container input:nth-child(2):checked~.slider .slide:nth-child(2),
+.container input:nth-child(3):checked~.slider .slide:nth-child(3),
+.container input:nth-child(4):checked~.slider .slide:nth-child(4),
+.container input:nth-child(5):checked~.slider .slide:nth-child(5){
+    clip-path: circle(150% at 50% 50%);
+    transition-delay: 1s;
+    background-position: center;
+}
+
+.content{
+    position: relative;
+    padding: 50px 50px 120px 80px;
+    max-width: 550px;
+}
+
+.content h2{
+    color: #fff;
+}
+
+.content p{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
 
 
 
